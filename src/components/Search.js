@@ -36,10 +36,12 @@ function Search() {
         placeholder="enter country"
         onChange={(e) => searchCountries(e.target.value)}
       />
-      {countryMatch.map((item) => (
-        <div>
-          {item.name.common}
-          <img width={30} height={20} src={item.flags.svg} />
+      {countryMatch.map((item, i) => (
+        <div key={i}>
+          <h5>
+            {item.name.common}
+            <img width={30} height={20} src={item.flags.svg} />
+          </h5>
         </div>
       ))}
     </div>
