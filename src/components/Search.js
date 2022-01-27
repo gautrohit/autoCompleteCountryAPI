@@ -21,8 +21,9 @@ function Search() {
       setCountryMatch([]);
     } else {
       let matches = countries.filter((country) => {
-        const regex = new RegExp(`${text}`, "gi");
-        return country.name.common.match(regex);
+        return country.name.common.toLowerCase().includes(text.toLowerCase());
+        // const regex = new RegExp(`${text}`, "gi");
+        // return country.name.common.match(regex);
       });
       setCountryMatch(matches);
     }
